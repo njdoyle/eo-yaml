@@ -36,12 +36,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Unit tests for {@link BuiltComments}.
+ * Unit tests for {@link RtComments}.
  * @author Mihai Andronache (amihaiemil@gmail.com)
  * @version $Id$
  * @since 4.2.0
  */
-public final class BuiltCommentsTest {
+public final class RtCommentsTest {
 
     /**
      * BuiltComments can iterate over the comments.
@@ -52,7 +52,7 @@ public final class BuiltCommentsTest {
         comments.add(Mockito.mock(Comment.class));
         comments.add(Mockito.mock(Comment.class));
         comments.add(Mockito.mock(Comment.class));
-        final Comments iterable = new BuiltComments(comments);
+        final Comments iterable = new RtComments(comments);
         int count = 0;
         for(final Comment com : iterable) {
             count++;
@@ -84,7 +84,7 @@ public final class BuiltCommentsTest {
                 "test comment3"
             )
         );
-        final Comments comments = new BuiltComments(all);
+        final Comments comments = new RtComments(all);
         MatcherAssert.assertThat(
             comments.referringTo("node2").value(),
             Matchers.equalTo("test comment2")

@@ -31,16 +31,13 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Built Comments. These are comments within a YamlNode which
- * have been added by the user when building it!
- *
- * Use this class when building YAML. For reading YAML, there
- * should be an analogue implementation working with YamlLines.
+ * Basic implementation of Comments, working with a List.
+ * "Rt" stands for "Runtime".
  * @author Mihai Andronache (amihaiemil@gmail.com)
  * @version $Id$
  * @since 4.2.0
  */
-final class BuiltComments implements Comments {
+final class RtComments implements Comments {
 
     /**
      * The list of comments.
@@ -51,7 +48,7 @@ final class BuiltComments implements Comments {
      * Constructor.
      * @param comments The comments.
      */
-    BuiltComments(final List<Comment> comments) {
+    RtComments(final List<Comment> comments) {
         this.comments = comments;
     }
 
