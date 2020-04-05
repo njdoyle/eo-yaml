@@ -48,38 +48,6 @@ public abstract class BaseYamlMapping
     extends BaseYamlNode implements YamlMapping {
 
     /**
-     * Comments referring the key:value pairs.
-     */
-    private Comments comments;
-
-    /**
-     * Default ctor.
-     */
-    public BaseYamlMapping() {
-        this(new Comments.Empty());
-    }
-
-    /**
-     * Constructor.
-     * @param comments Comments referring to the key: value entries.
-     */
-    public BaseYamlMapping(final Comments comments) {
-        this.comments = comments;
-    }
-
-    @Override
-    public final int hashCode() {
-        int hash = 0;
-        for(final YamlNode key : this.keys()) {
-            hash += key.hashCode();
-        }
-        for(final YamlNode value : this.values()) {
-            hash += value.hashCode();
-        }
-        return hash;
-    }
-
-    /**
      * Equals method for YamlMapping. It returns true if the compareTo(...)
      * method returns 0.
      * @param other The YamlMapping to which this is compared.
@@ -154,11 +122,6 @@ public abstract class BaseYamlMapping
             }
         }
         return result;
-    }
-
-    @Override
-    public final Comments comments() {
-        return this.comments;
     }
 
     /**

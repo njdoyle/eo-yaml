@@ -147,6 +147,11 @@ public final class MergedYamlMapping extends BaseYamlMapping {
     }
 
     @Override
+    public Comments comments() {
+        return this.merged.comments();
+    }
+
+    @Override
     public YamlMapping yamlMapping(final YamlNode key) {
         return this.merged.yamlMapping(key);
     }

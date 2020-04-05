@@ -191,6 +191,11 @@ final class ReadYamlMapping extends BaseYamlMapping {
     }
 
     @Override
+    public Comments comments() {
+        return null;
+    }
+
+    @Override
     public YamlMapping yamlMapping(final YamlNode key) {
         final YamlMapping found;
         final YamlNode value = this.value(key);

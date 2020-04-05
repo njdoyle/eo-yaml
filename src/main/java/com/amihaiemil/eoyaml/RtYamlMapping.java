@@ -41,7 +41,12 @@ final class RtYamlMapping extends BaseYamlMapping {
     /**
      * Comments referring to this mapping.
      */
-    private Comment comment;
+    private final Comment comment;
+
+    /**
+     * Comments referring the key:value pairs of this map.
+     */
+    private final Comments comments;
 
     /**
      * Key:value linked map (maintains the order of insertion).
@@ -68,8 +73,8 @@ final class RtYamlMapping extends BaseYamlMapping {
         final List<Comment> keyComments,
         final String comment
     ) {
-        super(new BuiltComments(keyComments));
         this.mappings.putAll(entries);
+        this.comments = new BuiltComments(keyComments);
         this.comment = new BuiltComment(this, comment);
     }
 
@@ -93,6 +98,11 @@ final class RtYamlMapping extends BaseYamlMapping {
     @Override
     public Comment comment() {
         return this.comment;
+    }
+
+    @Override
+    public Comments comments() {
+        return this.comments;
     }
 
     @Override
